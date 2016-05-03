@@ -58,7 +58,7 @@ reg_file u_r(clk, rst_n, ir[25:21], ir[20:16], r3_addr, r3_din, RegWrite, r1_dou
 
 //data_mem u_dm(clk_mem, MemWrite, alu_out[5:0], alu_b, clk, 0, alu_out[5:0], Memout);
 //data_mem u_dm(clka, wea, addra, dina, clkb, rstb, addrb, doutb);
-mem_data u_dm(alu_out, r2_dout, clk_mem, MemWrite, Memout);
+mem_data u_dm(alu_out[5:0], r2_dout, clk_mem, MemWrite, Memout);
 //mem_data u_dm(a, d, clk, we, spo);
 
 //instr_mem u_im(clk, 0, 1, pc[5:0], ir);
