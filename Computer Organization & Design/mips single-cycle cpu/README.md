@@ -13,12 +13,12 @@ MIPS assembly language program is listed as follows
 		sw   $t3, 0($t6)  	;ACC30000
 		sw   $t4, 1($t6)  	;ACC40001
 		addi $t1, $t5, -2 	;20A1FFFE
-loop:		lw   $t3, 0($t6) 	;8CC30000
+loop:	lw   $t3, 0($t6) 	;8CC30000
 	 	lw   $t4, 1($t6) 	;8CC40001
 	 	add  $t2, $t3, $t4 	;00641020
 	  	sw   $t2, 2($t6) 	;ACC20002
 	 	addi $t6, $t6, 1 	;20C60001
 	 	addi $t1, $t1, -1 	;2021FFFF
 	 	bgtz $t1, loop 		;1C20FFFD
-out:		j out 			;08000006
+out:	j out 				;08000006
 </pre>
