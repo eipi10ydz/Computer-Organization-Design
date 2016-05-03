@@ -1,0 +1,530 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../reg_file/reg_file.v" in library work
+Compiling verilog file "pc.v" in library work
+Module <reg_file> compiled
+Compiling verilog file "ipcore_dir/instr_mem.v" in library work
+Module <pc> compiled
+Compiling verilog file "ipcore_dir/data_mem.v" in library work
+Module <instr_mem> compiled
+Compiling verilog file "cu.v" in library work
+Module <data_mem> compiled
+Compiling verilog file "alu.v" in library work
+Module <cu> compiled
+Compiling verilog file "top.v" in library work
+Module <alu> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <reg_file> in library <work>.
+
+Analyzing hierarchy for module <alu> in library <work> with parameters.
+	A_ADD = "00000000000000000000000000000001"
+	A_AND = "00000000000000000000000000000011"
+	A_JMP = "00000000000000000000000000000111"
+	A_MOV = "00000000000000000000000000000000"
+	A_NOR = "00000000000000000000000000000110"
+	A_OR = "00000000000000000000000000000100"
+	A_SUB = "00000000000000000000000000000010"
+	A_XOR = "00000000000000000000000000000101"
+
+Analyzing hierarchy for module <pc> in library <work>.
+
+Analyzing hierarchy for module <cu> in library <work> with parameters.
+	ADD = "00000000000000000000000000000000"
+	ADDI = "00000000000000000000001111101000"
+	BGTZ = "00000000000000000000000001101111"
+	J = "00000000000000000000000000001010"
+	LUI = "00000000000000000000010001010111"
+	LW = "00000000000000011000011010101011"
+	ORI = "00000000000000000000010001001101"
+	SW = "00000000000000011000101010010011"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+WARNING:Xst:2211 - "ipcore_dir/data_mem.v" line 57: Instantiating black box module <data_mem>.
+WARNING:Xst:2211 - "ipcore_dir/instr_mem.v" line 60: Instantiating black box module <instr_mem>.
+Module <top> is correct for synthesis.
+ 
+Analyzing module <reg_file> in library <work>.
+Module <reg_file> is correct for synthesis.
+ 
+Analyzing module <alu> in library <work>.
+	A_ADD = 32'sb00000000000000000000000000000001
+	A_AND = 32'sb00000000000000000000000000000011
+	A_JMP = 32'sb00000000000000000000000000000111
+	A_MOV = 32'sb00000000000000000000000000000000
+	A_NOR = 32'sb00000000000000000000000000000110
+	A_OR = 32'sb00000000000000000000000000000100
+	A_SUB = 32'sb00000000000000000000000000000010
+	A_XOR = 32'sb00000000000000000000000000000101
+Module <alu> is correct for synthesis.
+ 
+Analyzing module <pc> in library <work>.
+WARNING:Xst:1467 - "pc.v" line 35: Reset or set value is not constant in <pc>. It could involve simulation mismatches
+Module <pc> is correct for synthesis.
+ 
+Analyzing module <cu> in library <work>.
+	ADD = 32'sb00000000000000000000000000000000
+	ADDI = 32'sb00000000000000000000001111101000
+	BGTZ = 32'sb00000000000000000000000001101111
+	J = 32'sb00000000000000000000000000001010
+	LUI = 32'sb00000000000000000000010001010111
+	LW = 32'sb00000000000000011000011010101011
+	ORI = 32'sb00000000000000000000010001001101
+	SW = 32'sb00000000000000011000101010010011
+Module <cu> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <i> in unit <reg_file> has a constant value of 100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <RegDst> in unit <cu> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ALUSrc> in unit <cu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <MemWrite> in unit <cu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <MemtoReg> in unit <cu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <bgtz_en> in unit <cu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <reg_file>.
+    Related source file is "../reg_file/reg_file.v".
+    Found 32-bit 32-to-1 multiplexer for signal <r1_dout>.
+    Found 32-bit 32-to-1 multiplexer for signal <r2_dout>.
+    Found 1024-bit register for signal <add>.
+INFO:Xst:738 - HDL ADVISOR - 1024 flip-flops were inferred for signal <add>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 1024 D-type flip-flop(s).
+	inferred  64 Multiplexer(s).
+Unit <reg_file> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "alu.v".
+WARNING:Xst:737 - Found 32-bit latch for signal <alu_out>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <zero>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 32-bit subtractor for signal <alu_out$addsub0000> created at line 55.
+    Found 32-bit xor2 for signal <alu_out$xor0000> created at line 70.
+    Found 32-bit comparator greater for signal <zero$cmp_gt0000> created at line 48.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <pc>.
+    Related source file is "pc.v".
+    Found 32-bit up accumulator for signal <pc>.
+    Summary:
+	inferred   1 Accumulator(s).
+Unit <pc> synthesized.
+
+
+Synthesizing Unit <cu>.
+    Related source file is "cu.v".
+WARNING:Xst:737 - Found 3-bit latch for signal <ALUControl>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <Branch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <RegWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+Unit <cu> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+WARNING:Xst:646 - Signal <pc<31:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 32
+ 32-bit register                                       : 32
+# Latches                                              : 5
+ 1-bit latch                                           : 3
+ 3-bit latch                                           : 1
+ 32-bit latch                                          : 1
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 2
+ 32-bit 32-to-1 multiplexer                            : 2
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/data_mem.ngc>.
+Reading core <ipcore_dir/instr_mem.ngc>.
+Loading core <data_mem> for timing and area information for instance <u_dm>.
+Loading core <instr_mem> for timing and area information for instance <u_im>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 1024
+ Flip-Flops                                            : 1024
+# Latches                                              : 5
+ 1-bit latch                                           : 3
+ 3-bit latch                                           : 1
+ 32-bit latch                                          : 1
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 64
+ 1-bit 32-to-1 multiplexer                             : 64
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <u_cu/ALUControl_2> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <u_cu/ALUControl_1> <u_cu/Branch> 
+WARNING:Xst:1710 - FF/Latch <u_pc/pc_0> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_pc/pc_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <u_pc/pc_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_pc/pc_31> of sequential type is unconnected in block <top>.
+
+Optimizing unit <top> ...
+
+Optimizing unit <reg_file> ...
+
+Optimizing unit <alu> ...
+WARNING:Xst:1294 - Latch <zero> is equivalent to a wire in block <alu>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 24.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1028
+ Flip-Flops                                            : 1028
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 2
+
+Cell Usage :
+# BELS                             : 2239
+#      GND                         : 3
+#      INV                         : 3
+#      LUT1                        : 2
+#      LUT2                        : 47
+#      LUT3                        : 1110
+#      LUT4                        : 9
+#      MUXCY                       : 34
+#      MUXF5                       : 544
+#      MUXF6                       : 256
+#      MUXF7                       : 128
+#      MUXF8                       : 64
+#      VCC                         : 3
+#      XORCY                       : 36
+# FlipFlops/Latches                : 1063
+#      FDCE                        : 4
+#      FDCE_1                      : 1024
+#      LD                          : 35
+# RAMS                             : 2
+#      RAMB16_S36_S36              : 2
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 1
+#      IBUF                        : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                     1153  out of   4656    24%  
+ Number of Slice Flip Flops:           1063  out of   9312    11%  
+ Number of 4 input LUTs:               1171  out of   9312    12%  
+ Number of IOs:                           2
+ Number of bonded IOBs:                   2  out of    232     0%  
+ Number of BRAMs:                         2  out of     20    10%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                             | Clock buffer(FF name)                                                                                                        | Load  |
+---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-------+
+clk                                                      | BUFGP                                                                                                                        | 1029  |
+N1                                                       | NONE(u_dm/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp36x36.ram)| 2     |
+u_cu/ALUControl_mux0000<0>(u_cu/ALUControl_mux0000<0>2:O)| NONE(*)(u_cu/ALUControl_2)                                                                                                   | 3     |
+u_alu/alu_out_or00001(u_alu/alu_out_or00001:O)           | BUFG(*)(u_alu/alu_out_31)                                                                                                    | 32    |
+---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+---------------------------------------+------------------------+-------+
+Control Signal                         | Buffer(FF name)        | Load  |
+---------------------------------------+------------------------+-------+
+u_r/rst_n_inv(u_r/rst_n_inv321_INV_0:O)| NONE(u_r/add_0_0)      | 1024  |
+u_pc/pc_or0000(u_pc/pc_or00001:O)      | NONE(u_pc/pc_2)        | 4     |
+---------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 3.932ns (Maximum Frequency: 254.330MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.932ns (frequency: 254.330MHz)
+  Total number of paths / destination ports: 1034 / 36
+-------------------------------------------------------------------------
+Delay:               3.932ns (Levels of Logic = 6)
+  Source:            u_r/add_0_17 (FF)
+  Destination:       u_dm/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp36x36.ram (RAM)
+  Source Clock:      clk falling
+  Destination Clock: clk falling
+
+  Data Path: u_r/add_0_17 to u_dm/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp36x36.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE_1:C->Q           2   0.514   0.449  u_r/add_0_17 (u_r/add_0_17)
+     LUT3:I1->O            1   0.612   0.000  u_r/mux40_10 (u_r/mux40_10)
+     MUXF5:I0->O           1   0.278   0.000  u_r/mux40_8_f5 (u_r/mux40_8_f5)
+     MUXF6:I0->O           1   0.451   0.000  u_r/mux40_6_f6 (u_r/mux40_6_f6)
+     MUXF7:I0->O           1   0.451   0.000  u_r/mux40_4_f7 (u_r/mux40_4_f7)
+     MUXF8:I0->O           4   0.451   0.499  u_r/mux40_2_f8 (alu_b<17>)
+     begin scope: 'u_dm'
+     RAMB16_S36_S36:DIA17        0.227          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp36x36.ram
+    ----------------------------------------
+    Total                      3.932ns (2.984ns logic, 0.948ns route)
+                                       (75.9% logic, 24.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.47 secs
+ 
+--> 
+
+Total memory usage is 338404 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   44 (   0 filtered)
+Number of infos    :   14 (   0 filtered)
+
