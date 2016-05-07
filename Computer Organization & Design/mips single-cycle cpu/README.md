@@ -7,9 +7,9 @@
 MIPS assembly language program is listed as follows
 
 <pre>
-		lw   $t5, 15($t6)	;8CC50014
-		lw   $t3, 16($t6) 	;8CC30015
-		lw   $t4, 17($t6) 	;8CC40016
+		lw   $t5, 14($t6)	;8CC50014
+		lw   $t3, 15($t6) 	;8CC30015
+		lw   $t4, 16($t6) 	;8CC40016
 		sw   $t3, 0($t6)  	;ACC30000
 		sw   $t4, 1($t6)  	;ACC40001
 		addi $t1, $t5, -2 	;20A1FFFE
