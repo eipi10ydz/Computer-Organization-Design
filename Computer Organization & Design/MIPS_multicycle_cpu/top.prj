@@ -1,0 +1,7 @@
+verilog work "sign_extend.v"
+verilog work "regfile.v"
+verilog work "pc.v"
+verilog work "ipcore_dir/memory.v"
+verilog work "cu.v"
+verilog work "alu.v"
+verilog work "top.v"
