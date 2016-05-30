@@ -1,7 +1,0 @@
-verilog work "../reg_file/reg_file.v"
-verilog work "pc.v"
-verilog work "ipcore_dir/instr_mem.v"
-verilog work "ipcore_dir/data_mem.v"
-verilog work "cu.v"
-verilog work "alu.v"
-verilog work "top.v"

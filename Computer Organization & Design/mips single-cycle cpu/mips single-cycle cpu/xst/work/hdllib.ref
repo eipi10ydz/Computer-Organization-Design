@@ -1,7 +1,0 @@
-MO cu NULL cu.v vlg64/cu.bin 1461463605
-MO pc NULL pc.v vlg13/pc.bin 1461463605
-MO data_mem NULL ipcore_dir/data_mem.v vlg40/data__mem.bin 1461463605
-MO top NULL top.v vlg6F/top.bin 1461463605
-MO reg_file NULL ../reg_file/reg_file.v vlg69/reg__file.bin 1461463605
-MO instr_mem NULL ipcore_dir/instr_mem.v vlg6E/instr__mem.bin 1461463605
-MO alu NULL alu.v vlg0A/alu.bin 1461463605
